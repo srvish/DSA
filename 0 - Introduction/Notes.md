@@ -162,13 +162,13 @@ Mail: mailithere24@gmail.com
 
 # <h1 align=center>Sorting</h1>
 
-1. [**Bubble Sort**](DSA/5 - Sorting/Bubble Sort.md): Compare and swap adjacent elements. O(N²)
-2. **Selection Sort**: Select min and swap with start. O(N²)
-3. **Insertion Sort**: Insert key in sorted part. O(N²)
-4. **Merge Sort**: Divide and merge. O(NlogN)
-5. **Quick Sort**: Partition around pivot. O(NlogN) average
-6. **Counting Sort**: Count occurrences. O(N+K), only for positive numbers
-7. **Heap Sort**: Build heap, extract max/min. O(NlogN)
+1. [**Bubble Sort**](../5%20-%20Sorting/Bubble%20Sort.md): Compare and swap adjacent elements. O(N²)
+2. [**Selection Sort**](../5%20-%20Sorting/Selection%20Sort.md): Select min and swap with start. O(N²)
+3. [**Insertion Sort**](../5%20-%20Sorting/Insertion%20Sort.md): Insert key in sorted part. O(N²)
+4. [**Merge Sort**](../5%20-%20Sorting/Merge%20Sort.md): Divide and merge. O(NlogN)
+5. [**Quick Sort**](../5%20-%20Sorting/Quick%20Sort.md): Partition around pivot. O(NlogN) average
+6. [**Counting Sort**](../5%20-%20Sorting/Counting%20Sort.md): Count occurrences. O(N+K), only for positive numbers
+7. [**Heap Sort**](../5%20-%20Sorting/Heap%20Sort.md): Build heap, extract max/min. O(NlogN)
 
 # <h1 align=center>Searching</h1>
 
