@@ -17,33 +17,26 @@ Mail: mailithere24@gmail.com
 ## Index
 
 1. Introduction
-2. Linear vs Non-Linear Data Structures
-3. Tree
-4. Graph
-5. Sorting
-6. Searching
-7. Greedy Algorithms
-8. Dynamic Programming
-9. Extra Algorithms
+2. Array
+3. Stack
+4. Queue
+5. Array
+6. Linked List
+7. Tree
+8. Graph
+9. Sorting
+10. Searching
+11. Greedy Algorithms
+12. Dynamic Programming
+13. Extra Algorithms
 
-## Introduction
+# <h1 align=center>Introduction</h1>
 
 **What is a Data Structure?**
 
 - A way to store and organize data for efficient access and updates.
 
-**Types of Data Structures**
-
-- Linear: Stores data sequentially
-  - Array
-  - Stack
-  - Queue
-  - Linked List
-- Non-Linear: Stores data non-sequentially
-  - Tree (Binary Tree, Binary Search Tree, AVL Tree, B-Tree, B+Tree, Red-Black Tree)
-  - Graph (Spanning Tree, Minimum Spanning Tree, Strongly Connected Component, Adjacency Matrix/List)
-
-## Asymptotic Analysis
+**Asymptotic Analysis**
 
 - **Big O**: Upper bound (worst-case)
 - **Omega**: Lower bound (best-case)
@@ -54,21 +47,30 @@ Mail: mailithere24@gmail.com
   - Time complexity order: O(1) < O(logN) < O(N) < O(NlogN) < O(N²logN) < O(N³)
   - Space complexity = auxiliary space + input space. Don’t modify input unless asked.
 
-## Master Theorem
+**Master Theorem**
 
 - Used for analyzing divide and conquer recurrences.
 
-## Divide and Conquer
+**Divide and Conquer**
 
 - Break a problem into subproblems, solve recursively, and combine results.
 - Examples: Binary Search, Merge Sort, Quick Sort, Strassen's Matrix Multiplication, Karatsuba Algorithm
 
-## Linear Data Structures Details
+**Types of Data Structures**
+
+- Linear: Stores data sequentially. Example: Array, Stack, Queue, Linked List
+- Non-Linear: Stores data non-sequentially
+  - Tree (Binary Tree, Binary Search Tree, AVL Tree, B-Tree, B+Tree, Red-Black Tree)
+  - Graph (Spanning Tree, Minimum Spanning Tree, Strongly Connected Component, Adjacency Matrix/List)
+
+# <h1 align=center>Stack</h1>
 
 **Stack** (LIFO)
 
 - Operations: Push, Pop, Peek, IsEmpty, IsFull
 - Examples: Reverse word, expression evaluation, browser back button
+
+# <h1 align=center>Queue</h1>
 
 **Queue** (FIFO)
 
@@ -76,22 +78,28 @@ Mail: mailithere24@gmail.com
 - Types: Circular Queue, Deque, Priority Queue
 - Examples: CPU scheduling, Disk scheduling
 
+# <h1 align=center>Array</h1>
+
 **Array**
 
 - Stores records sequentially
 - Algorithms: Kadane's, Sliding Window, Two Pointers, Prefix Sums
+
+# <h1 align=center>Linked List</h1>
 
 **Linked List**
 
 - Types: Singly, Doubly, Circular
 - Algorithms: Fast/slow pointer (find middle, detect loop, delete from back)
 
+# <h1 align=center>Hash Table</h1>
+
 **Hash Table**
 
 - Stores key-value pairs using a hash function.
 - Collision resolution: Separate chaining (open hashing), Linear probing (closed hashing)
 
-## Tree Data Structures
+# <h1 align=center>Tree</h1>
 
 **Tree Terminology**
 
@@ -118,7 +126,7 @@ Mail: mailithere24@gmail.com
 - Operations: Heapify, Insert, Remove, Priority Queue
 - Used in Heap Sort
 
-## Graph Data Structures
+# <h1 align=center>Graph</h1>
 
 **Terminology**
 
@@ -152,7 +160,7 @@ Mail: mailithere24@gmail.com
 - Bellman-Ford (handles negative weights)
 - Prim’s, Topological Sort
 
-## Sorting Algorithms
+# <h1 align=center>Sorting</h1>
 
 1. **Bubble Sort**: Compare and swap adjacent elements. O(N²)
 2. **Selection Sort**: Select min and swap with start. O(N²)
@@ -162,24 +170,24 @@ Mail: mailithere24@gmail.com
 6. **Counting Sort**: Count occurrences. O(N+K), only for positive numbers
 7. **Heap Sort**: Build heap, extract max/min. O(NlogN)
 
-## Searching Algorithms
+# <h1 align=center>Searching</h1>
 
 1. **Linear Search**
 2. **Binary Search**
 
-## Greedy Algorithms
+# <h1 align=center>Greedy Algorithm</h1>
 
 - Approach: Make the best choice at each step; may not be globally optimal.
 - Properties: Greedy choice property, optimal substructure
 - Examples: Selection Sort, Knapsack, MST, Job Scheduling, Dijkstra, Huffman Coding, Ford-Fulkerson
 
-## Dynamic Programming
+# <h1 align=center>Dynamic Programming</h1>
 
 - Efficient for overlapping subproblems and optimal substructure.
 - Store solutions to subproblems to avoid recomputation.
 - Examples: Floyd-Warshall, Longest Common Subsequence, 0/1 Knapsack, Palindromes
 
-## Extra Algorithms
+# <h1 align=center>Extra algorithms</h1>
 
 - Backtracking
 - Rabin-Karp (Rolling Hash)
