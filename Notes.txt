@@ -1,0 +1,941 @@
+mailithere24@gmail.com
+
+https://seanprashad.com/leetcode-patterns/
+https://github.com/hxu296/leetcode-company-wise-problems-2022
+https://www.programiz.com/dsa
+https://www.geeksforgeeks.org/c-program-to-print-all-permutations-of-a-given-string-2/
+
+while taking interview learned two things. In case it is specific role interview then technical questions will be asked related to language/framework.
+In case of MAANG language does not matter but the concept matter, therefore whenever they ask programming question you should first speak up the logic and after that start writting.
+Update the resume which shows the quantitative result you have achieved. Instead of things you know you should right what you achieved.
+Not just performance but the various features you included.
+_______________________________________________________________________________________________________________________________________________________
+Index
+1) Introduction
+2) Linear data structure and non linear data structure
+3) Tree
+4) Graph
+5) Sorting
+6) Searching
+7) Greedy alogorithm
+8) Dynamic alogorithm
+9) Extra Algorithm
+_______________________________________________________________________________________________________________________________________________________
+1) Introduction
+What is data structure?
+- Data structure is a storage that is used to store and organize data. It is a way of arranging data
+on a computer so that it can be accessed and updated efficiently.
+
+Types of data structure
+1) Linear Data structure
+2) Non Linear data structure
+
+1) Linear Data structure
+- Array
+- Stack
+- Queue
+- Linked List
+
+2) Non Linear data structure
+- Graph
+Ex: - Spanning Tree and minium spanning tree
+	- strongly connected component
+	- Adjacency matrix
+	- Adjacency List
+
+- Tree
+Ex:	- Binary tree
+	- Binary Search tree
+	- AVL Tree
+	- B-Tree
+	- B+Tree
+	- Red-Block Tree
+
+Asymptotic Analysis
+- Big O : Big-O notation represents the upper bound of the running time of an algorithm. Therefore, it gives the worst-case complexity of an algorithm.
+- Omega : Omega notation represents the lower bound of the running time of an algorithm. Thus, it provides the best case complexity of an algorithm.
+- Theta : Theta notation encloses the function from above and below. Since it represents the upper and the lower bound of the running time of an algorithm, it is used for analyzing the average-case complexity of an algorithm.
+
+- Everyone look for big O notation for worst performance, therefore while calculating the Big O notation remember below points
+	- Time complexity calculation points
+		- Always consider worst case
+		- Always consider large amount of data
+		- Always ignore the constants
+		- Always ignore the less dominating terms => for example: Let say there are N=100000 value and O(100000 power 3 + log100000)
+			in this example log100000 is ignored becomes 6 is too small to consider, therefore we can say that O(N power 3) is time complexity.
+		- ascending orders of some of Big O: O(1) < O(logN) < O(N) < O(NlogN) < O(N power 2 logN) < O(N power 3).
+	- Space complexity calculation points
+		- It is auxillary space(Additional space we use for operations) + input space
+		- Never manipulate the given input data always create new space out of it. if the space is N and it is becoming 2N it is fine because space complexity is O(N).
+			we do not know that the user might be using the same input somewhere else. Until and unless interviewer ask to modify the input space do not modify it even when space is increasing.
+
+Master Theorem
+- The master theorem is used in calculating the time complexity of recurrence relations 
+(divide and conquer algorithms) in a simple and quick way.
+
+Divide And Conquer alogrithm
+- A divide and conquer algorithm is a strategy of solving a large problem by breaking the problem into smaller sub-problems
+solving the sub-problems, and combining them to get the desired output.
+To use the divide and conquer algorithm, recursion is used.
+Ex: - Binary Search
+	- Merge Sort
+	- Quick Sort
+	- Strassen's Matrix multiplication
+	- Karatsuba Alogrithm
+_______________________________________________________________________________________________________________________________________________________
+Stack - Follows LIFO order
+Operation allowed - Push, Pop, Peek, IsEmpty, IsFull
+Ex:	- To Reverse Word,
+	- Compilers use the stack to calculate the value of expressions like 2 + 4 / 5 * (7 - 9) by converting the expression to prefix or postfix form.
+	- The back button in a browser saves all the URLs you have visited previously in a stack.
+	
+Queue - Follows FIFO Order
+	Operations Allowed: Enqueue, Dequeue, IsEmpty, IsFull or Peek
+	Ex: CPU scheduling, Disk Scheduling
+
+	- Others Types
+		- Circular Queue
+		- Deque(Double Ended) Data Structure
+		- Priority Queue
+
+Array - Store record sequentially
+	Alogirthms
+		- Kadane's Algorithm
+		- Sliding window fixed size
+		- Sliding window variable size
+		- Two pointers
+		- Prefix sums
+		
+Linked List
+	- Types
+		- Singly
+		- Doubly
+		- Circular linked list
+
+	Algorithm
+		- Fast and slow pointer
+
+	Q) Get the middle element of linked list?
+	=> create two pointer l1 and l2.
+	=> move the l1 twice and l2 once.
+	=> if l1.Next is null, it means l2 is pointing to middle of the element.
+
+	Q) Detect loop in the linked list? (using Floyd's cycle finding algorithm)
+	=> create two pointer l1 and l2.
+	=> move the l1 twice and l2 once.
+	=> if l1.Next is equal to l2 before becoming null, it means there is loop.
+	
+	Q) Delete the element from the back of linked list?
+	=> create two pointer l1 and l2.
+	=> move the first pointer till the count from the back.
+	=> if count reached start increasing the second list.
+	=> once the first once reached last the second will be standing at just before the deleting item.
+	=> remove the next element and done.
+
+Hash table (similar to dictionary)
+	The Hash table data structure stores elements in key-value pairs where
+	Key- unique integer that is used for indexing the values. They key genereted using hash function to uniformaly distribute the values in hash table.
+	Value - data that are associated with keys.
+	Hash function is required which generate the index where we can store the value.
+	It can give duplicate key and have to store multiple value at same index.
+	- when we use hash function there is bound to have collision(to differnt value with same hash). Which is resolved using 2 techniques mention below
+		1 - Seperate chaining or Open Hashing
+			- all the element in the hash table is linked list to store multiple value in case of duplicate key for different values.
+		2 - Linear probing or Closed Hashing
+			- When hash generated then check in hash table if it is unoccupied. If yes then store the value else go sequencely to find unoccupied cell to store value.
+			- Similar to find the value we check for value sequencely until unoccupied cell is not found to indicate such value not exists.
+_______________________________________________________________________________________________________________________________________________________
+
+Tree
+	A tree is a nonlinear hierarchical data structure that consists of nodes connected by edges. where one or more node point to single node to form tree like structure.
+	
+	Tree Terminologies
+		- Node : A node is an entity that contains a key or value and pointers to its child nodes
+			The last nodes of each path are called leaf nodes or external nodes that do not contain a link/pointer to child nodes.
+			The node having at least a child node is called an internal node.
+		- Edge : It is the link between any two nodes.
+		- Root : It is the topmost node of a tree.
+		- Height of a Node : The height of a node is the number of edges from the node to the deepest 
+			leaf (ie. the longest path from the node to a leaf node).
+		- Depth of a Node : The depth of a node is the number of edges from the root to the node.
+		- Height of a Tree : The height of a Tree is the height of the root node or the depth of the deepest node.
+		- Degree of a Node : The degree of a node is the total number of branches of that node.
+		- Forest : A collection of disjoint trees is called a forest. You can create a forest by cutting the root of a tree.
+	
+	Tree Traversal
+		1. In-order
+			- First, visit all the nodes in the left subtree
+			- Then the root node
+			- Visit all the nodes in the right subtree
+			
+			Example:
+			1) recursive example
+				inorder(root->left)
+				display(root->data)
+				inorder(root->right)
+			2) Non-recursive example
+			
+		2. Pre-order
+			- Visit root node
+			- Visit all the nodes in the left subtree
+			- Visit all the nodes in the right subtree
+			
+			Example:
+			1) Recursive example
+				display(root->data)
+				preorder(root->left)
+				preorder(root->right)
+			2) Non-recursive example
+		
+		3. Post-order
+			- Visit all the nodes in the left subtree
+			- Visit all the nodes in the right subtree
+			- Visit the root node
+			Example:
+			1) Recursive example
+				preorder(root->left)
+				preorder(root->right)
+				display(root->data)
+			2) Non-recursive example
+
+		4. Level order traversal
+		
+	Types of Tree
+		- Binary Tree
+			A binary tree is a tree data structure in which each parent node can have at most two children
+			Each node of a binary tree consists of three items:
+			Data Item, Address of left child, address of right child
+			
+		- Types of binary tree
+			1 - Full Binary Tree
+				A full Binary tree is a special type of binary tree in which every parent node/internal node 
+				has either two or no children.
+				
+				Let i = the number of internal nodes
+					n = be the total number of nodes
+					l = number of leaves
+					L = number of levels
+				then 
+					1. The number of leaves is = i + 1.
+					2. The total number of nodes is = 2i + 1.
+					3. The number of internal nodes is = (n – 1) / 2.
+					4. The number of leaves is = (n + 1) / 2.
+					5. The total number of nodes is = 2l – 1.
+					6. The number of internal nodes is = l – 1.
+					7. The number of leaves is at most = Pow(2, λ - 1).
+			
+			2 - Perfect Binary Tree
+				A perfect binary tree is a type of binary tree in which every internal node has exactly two 
+				child nodes and all the leaf nodes are at the same level.
+				
+				1. A perfect binary tree of height h has pow(2,h + 1) – 1 node.
+				A perfect binary tree with n nodes has height log(n + 1) – 1 = Θ(ln(n)).
+				A perfect binary tree of height h has pow(2,h) leaf nodes.
+				The average depth of a node in a perfect binary tree is Θ(ln(n)).
+			
+			3 - Complete Binary Tree
+				A complete binary tree is just like a full binary tree, but with two major differences
+					1 - Every level must be completely filled
+					2 - All the leaf elements must lean towards the left.
+					3 - The last leaf element might not have a right sibling i.e. a complete binary tree doesn't have 
+					to be a full binary tree.
+			
+			4 - Degenerate or Pathological Tree
+				A degenerate or pathological tree is the tree having a single child either left or right.
+			
+			5 - Skewed Binary Tree
+				A skewed binary tree is a pathological/degenerate tree in which the tree is either dominated by 
+				the left nodes or the right nodes. Thus, there are two types of skewed binary tree: left-skewed 
+				binary tree and right-skewed binary tree.
+			
+			6 - Balanace Binary Tree
+				It is a type of binary tree in which the difference between the height of the left and the right 
+				subtree for each node is either 0 or 1.
+				
+		- Binary Search Tree
+			Binary search tree is a data structure that quickly allows us to maintain a sorted list of numbers.
+			It is called a binary tree because each tree node has a maximum of two children.
+			It is called a search tree because it can be used to search for the presence of a number in O(log(n)) time.
+			
+			Please practice Search of item in tree
+			Please practice Insert of item in tree
+			Please practice delete of item in tree
+
+		- AVL Tree
+			AVL tree is a self-balancing binary search tree in which each node maintains extra information called a 
+			balance factor whose value is either -1, 0 or +1.
+			AVL tree got its name after its inventor Georgy Adelson-Velsky and Landis.
+
+		- B Tree
+			B-tree is a special type of self-balancing search tree in which each node can contain more than one key 
+			and can have more than two children. It is a generalized form of the binary search tree.
+			
+			It is also known as a height-balanced m-way tree.
+			
+			Why do you need a B-tree data strcuture?
+				The need for B-tree arose with the rise in the need for lesser time in accessing the physical storage media like a hard disk.
+				The secondary storage devices are slower with a larger capacity. There was a need for such types of data structures that minimize the disk accesses.
+				Other data structures such as a binary search tree, avl tree, red-black tree, etc can store only one key in one node. If you have to store a large number of keys, 
+				then the height of such trees becomes very large and the access time increases.
+				However, B-tree can store many keys in a single node and can have multiple child nodes. This decreases the height significantly allowing faster disk accesses.
+				
+			B tree Properties
+			1. For each node x, the keys are stored in increasing order.
+			2. In each node, there is a boolean value x.leaf which is true if x is a leaf.
+			3. If n is the order of the tree, each internal node can contain at most n - 1 keys along with a pointer to each child.
+			4. Each node except root can have at most n children and at least n/2 children.
+			5. All leaves have the same depth (i.e. height-h of the tree).
+			6. The root has at least 2 children and contains a minimum of 1 key.
+			7. If n ≥ 1, then for any n-key B-tree of height h and minimum degree t ≥ 2, h ≥ logt (n+1)/2.
+			
+			Please practice Search of item in tree - O(logN)
+			Please practice Insert of item in tree - O(logN)
+			Please practice delete of item in tree - O(logN)
+		
+		- B+ Tree
+			A B+ tree is an advanced form of a self-balancing tree in which all the values are present in the leaf level.
+			An important concept to be understood before learning B+ tree is multilevel indexing. In multilevel indexing,
+			the index of indices is created as in figure below. It makes accessing the data easier and faster.
+		
+		- Red Block Tree
+
+		- Trie or prefix tree
+			- trie implementation where we can insert, search and partial search in O(n) where n is the number character in the word
+			- below example works with only the small case character, you can modify it to work with different character to achieve your goal.
+			
+			public class Trie
+			{
+				public class TrieNode
+				{
+					public TrieNode[] _nodes;
+					public bool isWord;
+					public TrieNode()
+					{
+						_nodes = new TrieNode[26];
+					}
+				}
+				
+				TrieNode _nodes;
+				public Trie()
+				{
+					_nodes = new TrieNode();
+				}
+
+				public void Insert(string word)
+				{
+					var nodes = _nodes;
+					for (int i = 0; i < word.Length; i++)
+					{
+						int index = (word[i] - 'a');
+						if (nodes._nodes[index] == null)
+							nodes._nodes[index] = new TrieNode();
+
+						nodes = nodes._nodes[index];
+					}
+					nodes.isWord = true;
+				}
+
+				public bool Search(string word, bool isPrefix = false)
+				{
+					var nodes = _nodes;
+					for (int i = 0; i < word.Length; i++)
+					{
+						int index = word[i] - 'a';
+						if (nodes._nodes[index] == null)
+							return false;
+
+						nodes = nodes._nodes[index];
+					}
+					if (!isPrefix)
+						return nodes.isWord;
+
+					return isPrefix;
+				}
+
+				public bool StartsWith(string prefix)
+				{
+					return Search(prefix, true);
+				}
+			}
+
+		- Union-Find
+
+		- Segment tree
+		
+		- Fenwick Tree or Binary Index Tree
+			When we have large set of item in collection and want to perform efficient summation of items than we can use Fenwick tree.
+			It based on 1 index based alogrithm.
+			// Finwick Tree or Binary Index Tree
+			// refernce : https://www.youtube.com/watch?v=uSFzHCZ4E-8
+			public class BinaryIndexTree
+			{
+				int[] arr;
+				int[] org;
+				public BinaryIndexTree(int[] nums)
+				{
+					arr = new int[nums.Length + 1];
+					Array.Copy(nums, 0, arr, 1, nums.Length);
+					org = nums;
+					for(int i = 1; i < arr.Length; i++)
+					{
+						int j = i + (i & -i);
+						if(j < arr.Length)
+							arr[j] = arr[j] + arr[i];
+					}
+				}
+
+				// index is 1-based index
+				public void Change(int index, int value)
+				{
+					if(index > 0 && index < arr.Length)
+					{
+						int diff = value - org[index - 1];
+						Add(index, diff);
+					}
+				}
+
+				// index is 1-based index
+				public void Add(int index, int value)
+				{
+					while(index < arr.Length)
+					{
+						arr[index] += value;
+						index += (index & -index);
+					}
+				}
+
+				// index is 1-based index
+				public int Sum(int startIndex, int endIndex)
+				{
+					return Sum(endIndex) - Sum(startIndex - 1);
+				}
+
+				// index is 1-based index
+				public int Sum(int index)
+				{
+					int sum = 0;
+					while(index > 0 && index < arr.Length)
+					{
+						sum += arr[index];
+						index -= (index & -index);
+					}
+					return sum;
+				}
+			}
+			
+		- Heap Data structure
+			Heap data structure is a complete binary tree that satisfies the heap property, where any given node is
+			Max heap tree: always greater than its child node/s and the key of the root node is the largest among all other nodes.
+			This property is also called max heap property.
+			Min heap tree: always smaller than the child node/s and the key of the root node is the smallest among all other nodes.
+			This property is also called min heap property.
+			
+			Heap Operation
+				Heapify
+					- Heapify is the process of creating a heap data structure from a binary tree. It is used to create a Min-Heap or a Max-Heap.
+					step 1: insert the value in the array
+					step 2: iterate from one index before the mid index and consider that element as the largest.
+					step 3: get left(index * 2 + 1) and right(index * 2 + 2) child using index value
+					step 4: if left is largest then considered it largest else check right is largest than considered it largest else keep the current index as largest.
+					step 5: if largest is not current index than swap the current index with the largest and go to step 3 again by considering largest as the current index.
+					
+				Program: To create heap while inserting record in database.
+				public void Add(List<int> arr, int item)
+				{
+					int count = arr.Count;
+					arr.Add(item);
+					for(int i = count / 2 - 1; i >=0; i--)
+						Heapify(arr, i);
+				}
+				
+				public void Heapify(List<int> arr, int i)
+				{
+					int largest = i;
+					int left = i * 2 + 1;
+					int right = i * 2 + 2;
+					
+					if(left < arr.Count && arr[left] > arr[largest])
+						largest = left;
+					
+					if(right < arr.Count && arr[right] > arr[largest])
+						largest = right;
+						
+					if(largest != i)
+					{
+						int temp = arr[i];
+						arr[i] = arr[largest];
+						arr[largest] = temp;
+						Heapify(arr, largest);
+					}
+				}
+				
+				private int GetValueFromHeap(List<int> arr)
+				{
+					int res = arr[0];
+					arr.RemoveAt(0);
+					if (arr.Count == 1)
+						return res;
+					
+					for(int i = (arr.Count / 2) - 1; i >= 0; i--)
+						Heapify(i, arr);
+
+					return res;
+				}
+				
+				Program: Create priority Queue using heap data structure
+				
+			Example:
+			- Heap is used while implementing a priority queue.
+			- Heap Sort
+		
+		- Suffix tree
+		- Suffix Array
+		- Disjoint data structure
+_______________________________________________________________________________________________________________________________________________________
+Graph based DSA
+	A graph data structure is a collection of nodes that have data and are connected to other nodes.
+	More precisely, a graph is a data structure (V, E) that consists of
+    A collection of vertices V and a collection of edges E, represented as ordered pairs of vertices (u,v)
+
+	Graph Terminology
+
+    1. Adjacency: A vertex is said to be adjacent to another vertex if there is an edge connecting them.
+    2. Path: A sequence of edges that allows you to go from vertex A to vertex B is called a path. 
+		0-1, 1-2 and 0-2 are paths from vertex 0 to vertex 2.
+    3. Directed Graph: A graph in which an edge (u,v) doesn't necessarily mean that there is an edge 
+		(v, u) as well. The edges in such a graph are represented by arrows to show the direction of the edge.
+		
+	Graph Representation
+	1. Adjacency Matrix
+		An adjacency matrix is a 2D array of V x V vertices. Each row and column represent a vertex.
+		If the value of any element a[i][j] is 1, it represents that there is an edge connecting vertex i and vertex j.	
+		Since it is an undirected graph, for edge (0,2), we also need to mark edge (2,0); making 
+		the adjacency matrix symmetric about the diagonal.
+		
+	2. Adjacency List
+		An adjacency list represents a graph as an array of linked lists.
+		The index of the array represents a vertex and each element in its linked list represents the 
+		other vertices that form an edge with the vertex.
+		
+	Graph Operations
+		The most common graph operations are:
+		
+		Check if the element is present in the graph
+		Graph Traversal
+		Add elements(vertex, edges) to graph
+		Finding the path from one vertex to another
+		
+		Graph traversal 
+		1. BFS (Breadth First Search) : BFS is a strategy that exhausts all neighbours of a node before moving to the next level neighbours.
+			It is implemented using a queue data structure. BFS traversal is used for tasks like finding the shortest path in an unweighted
+			graph or level order traversal of a tree.
+			Example:
+				Traversal means visiting all the nodes of a graph. Breadth First Traversal or Breadth First Search is a recursive 
+				algorithm for searching all the vertices of a graph or tree data structure.
+				
+				Example:
+				public static List<int> TraverseBFS(List<List<int>> g, int startIndex)
+				{
+					Queue<int> s = new Queue<int>();
+					List<int> res = new List<int>(){startIndex};
+					bool[] visited = new bool[g.Count];
+					visited[startIndex] = true;
+					s.Enqueue(startIndex);
+					while(s.Count > 0)
+					{
+						int i = s.Dequeue();
+						foreach(var v in g[i])
+						{
+							if(!visited[v])
+							{
+								res.Add(v);
+								s.Enqueue(v);
+								visited[v] = true;
+							}
+						}
+					}
+					return res;
+				}
+				
+		2. DFS (Depth First Search) : DFS is a technique that explores as far as possible along each branch of the graph before backtracking.
+			It is implemented using a stack data structure and is preferred for tasks like Topological Sorting or detecting a cycle in a graph.
+			Example:
+				Depth first Search or Depth first traversal is a recursive algorithm for searching all the vertices of a
+				graph or tree data structure. Traversal means visiting all the nodes of a graph.
+				
+				Example:
+				public static List<int> TraverseDFS(List<List<int>> g, int startIndex)
+				{
+					List<int> res  = new List<int>();
+					DFS(g, startIndex, new bool[g.Count], res);
+					return res;
+				}
+
+				public static void DFS(List<List<int>> g, int i, bool[] visited, List<int> res)
+				{
+					res.Add(i);
+					visited[i] = true;
+					foreach(var v in g[i])
+						if(!visited[v])
+							DFS(g, v, visited, res);
+				}
+		
+	Spanning Tree
+		Before we learn about spanning trees, we need to understand two graphs: undirected graphs and connected graphs.
+		An undirected graph is a graph in which the edges do not point in any direction (ie. the edges are bidirectional).
+		A connected graph is a graph in which there is always a path from a vertex to any other vertex.
+		
+		A spanning tree is a sub-graph of an undirected connected graph, which includes all the vertices of the graph 
+		with a minimum possible number of edges. If a vertex is missed, then it is not a spanning tree.
+		The edges may or may not have weights assigned to them.
+		The total number of spanning trees with n vertices that can be created from a complete graph is equal to Pow(n,(n-2)).
+		If we have n = 4, the maximum number of possible spanning trees is equal to Pow(4,4-2) = 16. Thus, 16 spanning trees 
+		can be formed from a complete graph with 4 vertices.
+		
+		The minimum spanning tree from a graph is found using the following algorithms:
+		1. Prim's Algorithm (Covered in Dynamic programming)
+		2. Kruskal's Algorithm (Covered in Dynamic programming)
+
+	Strongly Connected Components
+	- A strongly connected component is the portion of a directed graph in which there is a path from each vertex 
+	to another vertex. It is applicable only on a directed graph.
+	- there comes the scenario where we have to find the number of strongly connected component in the directed graph.
+	These components can be found using Kosaraju's Algorithm.
+
+	Dijkstra Alogrithm : It is use to calculate shortest path for each node from current node. It works in the weighted graph only.
+	Program:
+		public static int[] Dijkstra(int[][] graph, int source)
+        {
+            bool[] visited = new bool[graph.Length];
+            int[] distance = new int[graph.Length];
+			Array.Fill(distance, int.MaxValue, 1, graph.Length - 1);
+
+            for(int i = 0; i < distance.Length; i++)
+            {
+                int u = MinDistance(distance, visited);
+                visited[u] = true;
+                for(int v = 0; v < distance.Length; v++)
+                {
+                    if(!visited[v] && graph[u][v] != 0 && (distance[u] + graph[u][v] < distance[v]))
+                        distance[v] = distance[u] + graph[u][v];
+                }
+            }
+            return distance;
+        }
+
+        public static int MinDistance(int[] distance, bool[] visited)
+        {
+            int minDis = int.MaxValue;
+            int minDisVertax = -1;
+            for(int i = 0; i < distance.Length; i++)
+            {
+                if(!visited[i] && distance[i] < minDis)
+                {
+                    minDis = distance[i];
+                    minDisVertax = i;
+                }
+            }
+            return minDisVertax;
+        }
+
+	- Prim's alogrithm
+	- Topological Sort
+	
+	Bellman Ford's Algorithm (Coming back once I find problem related to you)
+		It is similar to Dijkstra's algorithm but it can work with graphs in which edges can have negative weights.
+_______________________________________________________________________________________________________________________________________________________
+Sorting
+	1) Bubble Sort : comparing the current and the next element, if currrent is large than swap it with the next. Repeat it till number of element.
+		- largest element will move to end.
+		Example:
+		public static void BubbleSort(int[] arr)
+        {
+            for(int i = 0; i < arr.Length; i++)
+            {
+                for(int j = 0; j < arr.Length - i - 1; j++)
+                {
+                    if(arr[j] > arr[j + 1])
+						(arr[j+1], arr[j]) = (arr[j], arr[j+1]);
+                }
+            }
+        }
+		Time Complexity: O(N sequre)
+		Space Complexity: O(1)
+		
+	2) Selection Sort : Select the minimum element int the array and swap it with start of array.
+		Program:
+		public static void SelectionSort(int[] arr)
+        {
+            for(int i = 0; i < arr.Length - 1; i++)
+            {
+                int minIndex = i;
+                for(int j = i + 1; j < arr.Length; j++)
+				{
+					if(arr[minIndex] > arr[j])
+                        minIndex = j;
+				}
+				(arr[minIndex], arr[i]) = (arr[i], arr[minIndex]);
+            }
+        }
+		Time Complexity: O(N sequre)
+		Space Complexity: O(1)
+	
+	3) Insertion Sort : Select Key starting from index 1 and swipe with previous until value is Key is less and not reached zero position.
+		Program:
+		private static void InsertionSort(int[] arr)
+        {
+            for(int i = 1; i < arr.Length; i++)
+            {
+                int j = i;
+                while(j > 0 && arr[j - 1] > arr[j])
+                {
+                    (arr[j], arr[j - 1]) = (arr[j - 1], arr[j]);
+                    j--;
+                }
+            }
+        }
+		
+	4) Merge Sort
+		- Merge Sort is one of the most popular sorting algorithms that is based on the principle of Divide and Conquer Algorithm.
+		Program:
+		public static void MergeSort(int[] arr) {
+            MergeSort(arr, 0 , arr.Length - 1);
+        }
+
+        static void MergeSort(int[] arr, int l, int r)
+        {
+            if (l == r)
+                return;
+
+            int m = (l + r) / 2;
+            MergeSort(arr, l, m);
+            MergeSort(arr, m + 1, r);
+            Merge(arr, l, m, r);
+        }
+
+        static void Merge(int[] arr, int l, int m, int r)
+        {
+            int i = l;
+            int j = m + 1;
+            Queue<int> q = new Queue<int>();
+            while (i <= m && j <= r)
+            {
+                if (arr[i] <= arr[j])
+                    q.Enqueue(arr[i++]);
+                else
+                    q.Enqueue(arr[j++]);
+            }
+
+            while (i <= m)
+                q.Enqueue(arr[i++]);
+
+            while(j <= r)
+                q.Enqueue(arr[j++]);
+
+            while(q.Count > 0)
+                arr[l++] = q.Dequeue();
+        }
+		
+	5) Quick Sort
+		Quicksort is a sorting algorithm based on the divide and conquer approach where
+
+		- An array is divided into subarrays by selecting a pivot element (element selected from the array).
+			While dividing the array, the pivot element should be positioned in such a way that elements less 
+			than pivot are kept on the left side and elements greater than pivot are on the right side of the pivot.
+		- The left and right subarrays are also divided using the same approach. This process continues until each 
+		subarray contains a single element.
+		- At this point, elements are already sorted. Finally, elements are combined to form a sorted array.
+		Program:
+		public static void QuickSort(int[] arr)
+        {
+            QuickSort(arr, 0 , arr.Length - 1);
+        }
+
+        public static void QuickSort(int[] arr, int low, int high)
+        {
+            if(low < high)
+            {
+                int pi = Partition(arr, low, high);
+                QuickSort(arr, low, pi - 1);
+                QuickSort(arr, pi + 1, high);
+            }
+        }
+
+        public static int Partition(int[] arr, int low, int high)
+        {
+            int pivot = arr[high];
+            int i = low;
+            for(int j = low; j <= high; j++)
+            {
+                if (arr[j] < pivot)
+                {
+                    (arr[i], arr[j]) = (arr[j], arr[i]);
+                    i++;
+                }
+            }
+            (arr[i], arr[high]) = (arr[high], arr[i]);
+
+            return i;
+        }
+		
+	6) Counting Sort: only works with positive numbers
+		Program:
+		public static void CountingSort(int[] arr)
+        {
+            int max = 0;
+            // Get the max
+            for(int i = 0; i < arr.Length; i++)
+                if(max < arr[i])
+                    max = arr[i];
+
+            int[] na = new int[max + 1];
+            // Add the count at index
+            for(int i = 0; i < arr.Length; i++)
+                na[arr[i]]++;
+
+            // cummulate
+            for(int i = 1; i < na.Length; i++)
+                na[i] += na[i - 1];
+
+            int[] op = new int[arr.Length];
+            for(int i = arr.Length - 1; i >=0; i--)
+                op[--na[arr[i]]] = arr[i];
+            
+            // Assign the value
+            for(int i = 0; i < op.Length; i++)
+                arr[i] = op[i];
+        }
+	
+	7) Heap Sort
+		Program:
+		public static void HeapSort(int[] arr)
+        {
+            for(int i = (arr.Length/2) - 1; i >= 0; i--)
+                Heapify(arr, arr.Length, i);
+
+            for(int i = arr.Length - 1; i >= 0; i--)
+            {
+				(arr[i], arr[0]) = (arr[0], arr[i]);
+                Heapify(arr, i, 0);
+            }
+        }
+
+        public static void Heapify(int[] arr, int len, int i)
+        {
+            int max = i;
+            int l = i * 2 + 1;
+            int r = i * 2 + 2;
+
+            if(l < len && arr[l] > arr[max])
+                max = l;
+
+            if(r < len && arr[r] > arr[max])
+                max = r;
+
+            if(max != i)
+            {
+				(arr[max], arr[i]) = (arr[i], arr[max]);
+                Heapify(arr, len, max);
+            }
+        }
+_____________________________________________________________________________________________________
+Searching
+	1) Linear Search
+	2) Binary Search
+		Program:
+		-- Get the index of the element in sorted array or insert position if not present.
+		public int BinarySearch(int[] arr, int n)
+        {
+            int l = 0; 
+            int r = arr.Length - 1;
+
+            while(l < r)
+            {
+                int mid = (l + r) / 2;
+                if(arr[mid] == n)
+                    return mid;
+                else if(arr[mid] < n)
+                    l = mid + 1;
+                else
+                    r = mid - 1;
+            }
+            return l;
+        }
+		1) Binary search in an array, the mid is biased toward left i.e if you l = 4 and r = 5 then the mid will always be 4 because the numbers are integer.
+		2) Because of above point you might have noticed that l is always moved like mid + 1 or mid + 2. Generally r is moved to mid only.
+		3) In case if you decided to do l = mid then there you can face infinite loop. but not the other way round.
+		
+	3) There is other searching option for tree I will be coming back for those again.
+_____________________________________________________________________________________________________
+Gready Alogrithm
+	A greedy algorithm is an approach for solving a problem by selecting the best option available at the moment.
+	It doesn't worry whether the current best result will bring the overall optimal result.
+	
+	The algorithm never reverses the earlier decision even if the choice is wrong. It works in a top-down approach.
+	This algorithm may not produce the best result for all the problems. It's because it always goes for the immediate 
+	best choice to produce the global best result.
+	
+	However, we can determine if the algorithm can be used with any problem if the problem has the following properties:
+	1. Greedy Choice Property
+		If an optimal solution to the problem can be found by choosing the best choice at each step without reconsidering 
+		the previous steps once chosen, the problem can be solved using a greedy approach. This property is called greedy 
+		choice property.
+
+	2. Optimal Substructure
+		If the optimal overall solution to the problem corresponds to the optimal solution to its subproblems, then the 
+		problem can be solved using a greedy approach. This property is called optimal substructure.
+		
+	Advantages of Greedy Approach
+		The algorithm is easier to describe.
+		This algorithm can perform better than other algorithms (but, not in all cases).
+		
+	Different Type of Greedy Alogrithm
+		Selection Sort
+		Knapsack Problem
+		Minimum Spanning Tree
+		Single-Source Shortest Path Problem
+		Job Scheduling Problem
+		Prim's minimal Spanning Tree Alogithm
+		Kruskal's Minimal Spanning Tree Alogrithm
+		Dijkstra's Minimal Spanning Tree Alogirthm
+		Huffman coding
+		Ford-Fulkerson Algorithm
+		
+_______________________________________________________________________________________________________________________________________________________
+	Dynamic programming
+		Dynamic Programming is a technique in computer programming that helps to efficiently solve a class
+		of problems that have overlapping subproblems and optimal substructure property.
+		
+		If any problem can be divided into subproblems, which in turn are divided into smaller subproblems,
+		and if there are overlapping among these subproblems, then the solutions to these subproblems can be
+		saved for future reference. In this way, efficiency of the CPU can be enhanced. This method of solving
+		a solution is referred to as dynamic programming.
+		
+		Check the below fibonacci number solution. Whenever there is overlapping sub-problem. Instead of recalculating it
+		again and again. Just simple store the value and use it directly instead of re-calculation.
+		
+		
+		Different Types of Dynamic Programming Algorithms
+		- Floyed-Warhshall Alogrithm
+		- Longest Common Sequence
+		
+		Strategy to solve DP Problems
+		- https://betterprogramming.pub/a-systematic-approach-to-dynamic-programming-54902b6b0071
+		- https://www.freecodecamp.org/news/follow-these-steps-to-solve-any-dynamic-programming-interview-problem-cc98e508cd0e/
+
+		Algorithms
+		- 0 / 1 Knapsack
+		- Unbounded Knapsack
+		- LCS
+		- Palindromes
+_______________________________________________________________________________________________________________________________________________________
+	- Alogrithms
+		- Backtracking Alorithm
+		- Robin-Karp Alogrithm (Rolling Hash algorithm)
+			This is string matching alorithm using hash. also called rolling hash function
+			Spurious hits is problem which makes the alogorithm run O(mn).
+		- Knuth Morris Pratt (KMP) Alogrithm
+		- Boyer-Moore Alogrithm or Majority voting alogrithm
+			link : https://gregable.com/2013/10/majority-vote-algorithm-find-majority.html
+			The essential concepts is you keep a counter for the majority number X. If you find a number Y that is not X, the current counter should deduce 1.
+			The reason is that if there is 5 X and 4 Y, there would be one (5-4) more X than Y. This could be explained as "4 X being paired out by 4 Y".
