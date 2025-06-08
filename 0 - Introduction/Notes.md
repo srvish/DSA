@@ -107,24 +107,22 @@ Mail: mailithere24@gmail.com
 
 **Tree Traversal**
 
-- In-order, Pre-order, Post-order, Level-order (recursive and non-recursive)
+- [In-order](../6%20-%20Tree/Inorder%20Traversal.md), [Pre-order](../6%20-%20Tree/Preorder%20Traversal.md), [Post-order](../6%20-%20Tree/Postorder%20Traversal.md), [Level-order](../6%20-%20Tree/Levelorder%20Traversal.md) (recursive and non-recursive)
 
 **Types of Trees**
 
 - Binary Tree (Full, Perfect, Complete, Degenerate, Skewed, Balanced)
-- Binary Search Tree (BST): O(logN) search/insert/delete
-- AVL Tree: Self-balancing BST
-- B-Tree: Multi-key, multi-child, height-balanced, used for disk storage
-- B+ Tree: All values at leaf level, supports multilevel indexing
-- Red-Black Tree: Self-balancing BST
-- Trie (Prefix Tree): Efficient insert/search/startsWith for strings
-- Union-Find, Segment Tree, Fenwick Tree (Binary Indexed Tree), Heap, Suffix Tree/Array, Disjoint Set
-
-**Heap**
-
-- Complete binary tree with the heap property (max/min)
-- Operations: Heapify, Insert, Remove, Priority Queue
-- Used in Heap Sort
+- [Binary Search Tree (BST)](../6%20-%20Tree/Binary%20Search%20Tree.md): O(logN) search/insert/delete
+- [AVL Tree](../6%20-%20Tree/AVL%20Tree.md): Self-balancing BST
+- [B-Tree](../6%20-%20Tree/B-Tree.md): Multi-key, multi-child, height-balanced, used for disk storage
+- [B+ Tree](../6%20-%20Tree/B+Tree.md): All values at leaf level, supports multilevel indexing
+- [Red-Black Tree](../6%20-%20Tree/Red%20Block%20Tree.md): Self-balancing BST
+- [Trie (Prefix Tree)](../6%20-%20Tree/Trie.md): Efficient insert/search/startsWith for strings
+- [Union-Find or Disjoint Set Union](../6%20-%20Tree/Union-Find.md)
+- [Segment Tree](../6%20-%20Tree/Segment%20Tree.md)
+- [Fenwick Tree (Binary Indexed Tree)](../6%20-%20Tree/Fenwick%20Tree.md)
+- [Heap](../6%20-%20Tree/Heap%20Tree.md),
+- [Suffix Tree/Array](../6%20-%20Tree/Suffix%20Tree.md)
 
 # <h1 align=center>Graph</h1>
 
