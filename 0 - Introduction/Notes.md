@@ -162,7 +162,7 @@ Mail: mailithere24@gmail.com
 
 # <h1 align=center>Sorting</h1>
 
-1. **Bubble Sort**: Compare and swap adjacent elements. O(N²)
+1. [**Bubble Sort**](DSA/5 - Sorting/Bubble Sort.md): Compare and swap adjacent elements. O(N²)
 2. **Selection Sort**: Select min and swap with start. O(N²)
 3. **Insertion Sort**: Insert key in sorted part. O(N²)
 4. **Merge Sort**: Divide and merge. O(NlogN)
