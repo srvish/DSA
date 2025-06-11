@@ -1,12 +1,5 @@
 Mail: mailithere24@gmail.com
 
-## Useful Links
-
-- https://seanprashad.com/leetcode-patterns/
-- https://github.com/hxu296/leetcode-company-wise-problems-2022
-- https://www.programiz.com/dsa
-- https://www.geeksforgeeks.org/c-program-to-print-all-permutations-of-a-given-string-2/
-
 ## Interview Tips
 
 - For specific roles, expect technical questions related to the language/framework.
@@ -191,3 +184,12 @@ Mail: mailithere24@gmail.com
 - Rabin-Karp (Rolling Hash)
 - Knuth-Morris-Pratt (KMP)
 - Boyer-Moore (Majority Voting)
+
+---
+
+## <h1 align=center>Useful Links</h1>
+
+- https://seanprashad.com/leetcode-patterns/
+- https://github.com/hxu296/leetcode-company-wise-problems-2022
+- https://www.programiz.com/dsa
+- https://www.geeksforgeeks.org/c-program-to-print-all-permutations-of-a-given-string-2/
