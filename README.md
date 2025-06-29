@@ -58,7 +58,7 @@ Mail: mailithere24@gmail.com
 
 # <h1 align=center>Stack</h1>
 
-**Stack** (LIFO)
+[**Stack**](1%20-%20Stack/Implementation.md) (LIFO)
 
 - Operations: Push, Pop, Peek, IsEmpty, IsFull
 - Examples: Reverse word, expression evaluation, browser back button
