@@ -65,7 +65,7 @@ Mail: mailithere24@gmail.com
 
 # <h1 align=center>Queue</h1>
 
-**Queue** (FIFO)
+[**Queue**](2%20-%20Queue/Implementation.md) (FIFO)
 
 - Operations: Enqueue, Dequeue, IsEmpty, IsFull, Peek
 - Types: Circular Queue, Deque, Priority Queue
@@ -73,21 +73,21 @@ Mail: mailithere24@gmail.com
 
 # <h1 align=center>Array</h1>
 
-**Array**
+[**Array**](3%20-%20Array/Implementation.md)
 
 - Stores records sequentially
 - Algorithms: Kadane's, Sliding Window, Two Pointers, Prefix Sums
 
 # <h1 align=center>Linked List</h1>
 
-**Linked List**
+[**Linked List**](4%20-%20Linked%20List/Implementation.md)
 
 - Types: Singly, Doubly, Circular
 - Algorithms: Fast/slow pointer (find middle, detect loop, delete from back)
 
 # <h1 align=center>Hash Table</h1>
 
-**Hash Table**
+[**Hash Table**](5%20-%20Hash%20Table/Implementation.md)
 
 - Stores key-value pairs using a hash function.
 - Collision resolution: Separate chaining (open hashing), Linear probing (closed hashing)
@@ -100,22 +100,22 @@ Mail: mailithere24@gmail.com
 
 **Tree Traversal**
 
-- [In-order](6%20-%20Tree/Inorder%20Traversal.md), [Pre-order](6%20-%20Tree/Preorder%20Traversal.md), [Post-order](6%20-%20Tree/Postorder%20Traversal.md), [Level-order](6%20-%20Tree/Levelorder%20Traversal.md) (recursive and non-recursive)
+- [In-order](7%20-%20Tree/Inorder%20Traversal.md), [Pre-order](7%20-%20Tree/Preorder%20Traversal.md), [Post-order](7%20-%20Tree/Postorder%20Traversal.md), [Level-order](7%20-%20Tree/Levelorder%20Traversal.md) (recursive and non-recursive)
 
 **Types of Trees**
 
 - Binary Tree (Full, Perfect, Complete, Degenerate, Skewed, Balanced)
-- [Binary Search Tree (BST)](6%20-%20Tree/Binary%20Search%20Tree.md): O(logN) search/insert/delete
-- [AVL Tree](6%20-%20Tree/AVL%20Tree.md): Self-balancing BST
-- [B-Tree](6%20-%20Tree/B-Tree.md): Multi-key, multi-child, height-balanced, used for disk storage
-- [B+ Tree](6%20-%20Tree/B+Tree.md): All values at leaf level, supports multilevel indexing
-- [Red-Black Tree](6%20-%20Tree/Red%20Block%20Tree.md): Self-balancing BST
-- [Trie (Prefix Tree)](6%20-%20Tree/Trie.md): Efficient insert/search/startsWith for strings
-- [Union-Find or Disjoint Set Union](6%20-%20Tree/Union-Find.md)
-- [Segment Tree](6%20-%20Tree/Segment%20Tree.md)
-- [Fenwick Tree (Binary Indexed Tree)](6%20-%20Tree/Fenwick%20Tree.md)
-- [Heap](6%20-%20Tree/Heap%20Tree.md),
-- [Suffix Tree/Array](6%20-%20Tree/Suffix%20Tree.md)
+- [Binary Search Tree (BST)](7%20-%20Tree/Binary%20Search%20Tree.md): O(logN) search/insert/delete
+- [AVL Tree](7%20-%20Tree/AVL%20Tree.md): Self-balancing BST
+- [B-Tree](7%20-%20Tree/B-Tree.md): Multi-key, multi-child, height-balanced, used for disk storage
+- [B+ Tree](7%20-%20Tree/B+Tree.md): All values at leaf level, supports multilevel indexing
+- [Red-Black Tree](7%20-%20Tree/Red%20Block%20Tree.md): Self-balancing BST
+- [Trie (Prefix Tree)](7%20-%20Tree/Trie.md): Efficient insert/search/startsWith for strings
+- [Union-Find or Disjoint Set Union](7%20-%20Tree/Union-Find.md)
+- [Segment Tree](7%20-%20Tree/Segment%20Tree.md)
+- [Fenwick Tree (Binary Indexed Tree)](7%20-%20Tree/Fenwick%20Tree.md)
+- [Heap](7%20-%20Tree/Heap%20Tree.md),
+- [Suffix Tree/Array](7%20-%20Tree/Suffix%20Tree.md)
 
 # <h1 align=center>Graph</h1>
 
@@ -153,13 +153,13 @@ Mail: mailithere24@gmail.com
 
 # <h1 align=center>Sorting</h1>
 
-1. [**Bubble Sort**](5%20-%20Sorting/Bubble%20Sort.md): Compare and swap adjacent elements. O(N²)
-2. [**Selection Sort**](5%20-%20Sorting/Selection%20Sort.md): Select min and swap with start. O(N²)
-3. [**Insertion Sort**](5%20-%20Sorting/Insertion%20Sort.md): Insert key in sorted part. O(N²)
-4. [**Merge Sort**](5%20-%20Sorting/Merge%20Sort.md): Divide and merge. O(NlogN)
-5. [**Quick Sort**](5%20-%20Sorting/Quick%20Sort.md): Partition around pivot. O(NlogN) average
-6. [**Counting Sort**](5%20-%20Sorting/Counting%20Sort.md): Count occurrences. O(N+K), only for positive numbers
-7. [**Heap Sort**](5%20-%20Sorting/Heap%20Sort.md): Build heap, extract max/min. O(NlogN)
+1. [**Bubble Sort**](6%20-%20Sorting/Bubble%20Sort.md): Compare and swap adjacent elements. O(N²)
+2. [**Selection Sort**](6%20-%20Sorting/Selection%20Sort.md): Select min and swap with start. O(N²)
+3. [**Insertion Sort**](6%20-%20Sorting/Insertion%20Sort.md): Insert key in sorted part. O(N²)
+4. [**Merge Sort**](6%20-%20Sorting/Merge%20Sort.md): Divide and merge. O(NlogN)
+5. [**Quick Sort**](6%20-%20Sorting/Quick%20Sort.md): Partition around pivot. O(NlogN) average
+6. [**Counting Sort**](6%20-%20Sorting/Counting%20Sort.md): Count occurrences. O(N+K), only for positive numbers
+7. [**Heap Sort**](6%20-%20Sorting/Heap%20Sort.md): Build heap, extract max/min. O(NlogN)
 
 # <h1 align=center>Searching</h1>
 

@@ -74,6 +74,13 @@ public class Stack
 }
 ```
 
----
+## Time and Space Complexity
 
-**Time Complexity:**
+**Time Complexity**
+
+- **Push:** O(1)
+- **Pop:** O(1)
+- **Peek:** O(1)
+- **IsEmpty:** O(1)
+
+**Space Complexity:** O(n), where n is the size of the stack.
