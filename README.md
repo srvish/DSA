@@ -133,23 +133,23 @@ Mail: mailithere24@gmail.com
 
 **Traversal**
 
-- BFS (uses queue): Level order, shortest path in unweighted graphs
-- DFS (uses stack/recursion): Topological sort, cycle detection
+- [BFS](8%20-%20Graph/BFS.md) (uses queue): Level order, shortest path in unweighted graphs
+- [DFS](8%20-%20Graph/DFS.md) (uses stack/recursion): Topological sort, cycle detection
 
 **Spanning Tree**
 
 - Subgraph including all vertices with minimum edges
-- Minimum Spanning Tree: Prim’s, Kruskal’s algorithms
+- Minimum Spanning Tree: [Prim’s](8%20-%20Graph/Prims%20algo.md), [Kruskal’s](8%20-%20Graph/Kruskals%20algo.md) algorithms
 
 **Strongly Connected Components**
 
-- Find using Kosaraju’s Algorithm
+- Find using [Kosaraju’s Algorithm](8%20-%20Graph/Kosarajus%20algo.md)
 
 **Shortest Path Algorithms**
 
-- Dijkstra’s (weighted graphs, no negative weights)
-- Bellman-Ford (handles negative weights)
-- Prim’s, Topological Sort
+- [Dijkstra’s](8%20-%20Graph/Dijkstras%20algo.md) (weighted graphs, no negative weights)
+- [Bellman-Ford](8%20-%20Graph/Bellman-ford%20algo.md) (handles negative weights)
+- [Prim’s](8%20-%20Graph/Prims%20algo.md), [Topological Sort](8%20-%20Graph/Topological%20Sort.md)
 
 # <h1 align=center>Sorting</h1>
 
@@ -181,9 +181,14 @@ Mail: mailithere24@gmail.com
 # <h1 align=center>Extra algorithms</h1>
 
 - Backtracking
-- Rabin-Karp (Rolling Hash)
-- Knuth-Morris-Pratt (KMP)
-- Boyer-Moore (Majority Voting)
+- Rabin-Karp (Rolling Hash, String Matching)
+- Knuth-Morris-Pratt (KMP, String Matching)
+- Boyer-Moore (String Matching)
+- Sliding Window Technique
+- Two Pointer Technique
+- Bit Manipulation
+- LRU Cache (Design)
+- Math Algorithms (GCD, LCM, Sieve of Eratosthenes, Fast Exponentiation)
 
 ---
 
