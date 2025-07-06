@@ -170,27 +170,25 @@ Mail: mailithere24@gmail.com
 
 - Approach: Make the best choice at each step; may not be globally optimal.
 - Properties: Greedy choice property, optimal substructure
-- Examples: Selection Sort, Knapsack, MST, Job Scheduling, Dijkstra, Huffman Coding, Ford-Fulkerson
+- Examples: [Selection Sort](6%20-%20Sorting/Selection%20Sort.md), [Knapsack](9%20-%20Dynamic%20programming/Knapsack.md), [MST](11%20-%20Greedy/MST.md), Job Scheduling, [Dijkstra](8%20-%20Graph/Dijkstras%20algo.md), [Huffman Coding](11%20-%20Greedy/Huffman%20Coding.md), Ford-Fulkerson
 
 # <h1 align=center>Dynamic Programming</h1>
 
 - Efficient for overlapping subproblems and optimal substructure.
 - Store solutions to subproblems to avoid recomputation.
-- Examples: Floyd-Warshall, Longest Common Subsequence, 0/1 Knapsack, Palindromes
+- Examples: [Floyd-Warshall](9%20-%20Dynamic%20programming/Floyd-Warshall.md), Longest Common Subsequence, [0/1 Knapsack](9%20-%20Dynamic%20programming/Knapsack.md)
 
 # <h1 align=center>Extra algorithms</h1>
 
-- Backtracking
-- Rabin-Karp (Rolling Hash, String Matching)
-- Knuth-Morris-Pratt (KMP, String Matching)
-- Boyer-Moore (String Matching)
-- Sliding Window Technique
-- Two Pointer Technique
-- Bit Manipulation
-- LRU Cache (Design)
-- Math Algorithms (GCD, LCM, Sieve of Eratosthenes, Fast Exponentiation)
-
----
+- [Backtracking](10%20-%20Miscellaneous%20Alogrithms/Backtracking.md)
+- [Rabin-Karp](10%20-%20Miscellaneous%20Alogrithms/Rabin-Karp.md) (Rolling Hash, String Matching)
+- [Knuth-Morris-Pratt](10%20-%20Miscellaneous%20Alogrithms/Knuth-Morris-Pratt.md) (KMP, String Matching)
+- [Boyer-Moore](10%20-%20Miscellaneous%20Alogrithms/Boyer-Moore.md) (String Matching)
+- [Sliding Window Technique](10%20-%20Miscellaneous%20Alogrithms/Sliding%20Window.md)
+- [Two Pointer Technique](10%20-%20Miscellaneous%20Alogrithms/Two%20Pointer%20Technique.md)
+- [Bit Manipulation](10%20-%20Miscellaneous%20Alogrithms/Bit%20Manipulation.md)
+- [LRU Cache](10%20-%20Miscellaneous%20Alogrithms/LRU%20Cache.md) (Design)
+- Math Algorithms ([GCD](10%20-%20Miscellaneous%20Alogrithms/GCD.md), [LCM](10%20-%20Miscellaneous%20Alogrithms/LCM.md), [Sieve of Eratosthenes](10%20-%20Miscellaneous%20Alogrithms/Sieve%20of%20Eratosthenes.md), [Fast Exponentiation](10%20-%20Miscellaneous%20Alogrithms/Fast%20Exponentiation.md))
 
 ## <h1 align=center>Useful Links</h1>
 
