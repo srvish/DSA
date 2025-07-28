@@ -65,7 +65,7 @@ Mail: mailithere24@gmail.com
 
 # <h1 align=center>Queue</h1>
 
-[**Queue**](2%20-%20Queue/Implementation.md) (FIFO)
+[**Queue**](2%20-%20Queue/Implementation.md) & [**Circular Queue**](2%20-%20Queue/Circular%20Queue.md) (FIFO)
 
 - Operations: Enqueue, Dequeue, IsEmpty, IsFull, Peek
 - Types: Circular Queue, Deque, Priority Queue
@@ -189,10 +189,3 @@ Mail: mailithere24@gmail.com
 - [Bit Manipulation](10%20-%20Miscellaneous%20Alogrithms/Bit%20Manipulation.md)
 - [LRU Cache](10%20-%20Miscellaneous%20Alogrithms/LRU%20Cache.md) (Design)
 - Math Algorithms ([GCD](10%20-%20Miscellaneous%20Alogrithms/GCD.md), [LCM](10%20-%20Miscellaneous%20Alogrithms/LCM.md), [Sieve of Eratosthenes](10%20-%20Miscellaneous%20Alogrithms/Sieve%20of%20Eratosthenes.md), [Fast Exponentiation](10%20-%20Miscellaneous%20Alogrithms/Fast%20Exponentiation.md))
-
-## <h1 align=center>Useful Links</h1>
-
-- https://seanprashad.com/leetcode-patterns/
-- https://github.com/hxu296/leetcode-company-wise-problems-2022
-- https://www.programiz.com/dsa
-- https://www.geeksforgeeks.org/c-program-to-print-all-permutations-of-a-given-string-2/
