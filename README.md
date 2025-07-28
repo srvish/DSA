@@ -1,28 +1,3 @@
-Mail: mailithere24@gmail.com
-
-## Interview Tips
-
-- For specific roles, expect technical questions related to the language/framework.
-- For MAANG, focus on concepts, not language. Explain logic before coding.
-- Update your resume to show quantitative achievements, not just skills.
-- Highlight features and performance improvements.
-
-## Index
-
-1. Introduction
-2. Array
-3. Stack
-4. Queue
-5. Array
-6. Linked List
-7. Tree
-8. Graph
-9. Sorting
-10. Searching
-11. Greedy Algorithms
-12. Dynamic Programming
-13. Extra Algorithms
-
 # <h1 align=center>Introduction</h1>
 
 **What is a Data Structure?**
