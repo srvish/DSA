@@ -51,7 +51,7 @@ public class BST
 {
     public TreeNode root;
 
-    // Search
+    // Search node
     public TreeNode Search(TreeNode node, int key)
     {
         if (node == null || node.val == key)
@@ -62,7 +62,7 @@ public class BST
             return Search(node.right, key);
     }
 
-    // Insert
+    // Insert node
     public TreeNode Insert(TreeNode node, int key)
     {
         if (node == null)
@@ -75,7 +75,7 @@ public class BST
         return node;
     }
 
-    // Delete
+    // Delete node
     public TreeNode Delete(TreeNode node, int key)
     {
         if (node == null)

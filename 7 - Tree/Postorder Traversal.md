@@ -42,7 +42,37 @@ public void PostorderRecursive(TreeNode root)
 
 ---
 
-## Iterative Postorder Traversal (C#)
+## Iterative Postorder Traversal (C#) - One way
+
+```csharp
+public void PostorderIterative(TreeNode root)
+{
+    if (root == null)
+        return;
+
+    Stack<TreeNode> stack1 = new Stack<TreeNode>();
+    Stack<TreeNode> stack2 = new Stack<TreeNode>();
+    stack1.Push(root);
+
+    while (stack1.Count > 0)
+    {
+        TreeNode node = stack1.Pop();
+        stack2.Push(node);
+
+        if (node.left != null)
+            stack1.Push(node.left);
+        if (node.right != null)
+            stack1.Push(node.right);
+    }
+
+    while (stack2.Count > 0)
+    {
+        Console.Write(stack2.Pop().val + " ");
+    }
+}
+```
+
+## Iterative Postorder Traversal (C#) - Another way
 
 ```csharp
 public void PostorderIterative(TreeNode root)
