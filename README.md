@@ -81,16 +81,16 @@
 
 - Binary Tree (Full, Perfect, Complete, Degenerate, Skewed, Balanced)
 - [Binary Search Tree (BST)](7%20-%20Tree/Binary%20Search%20Tree.md): O(logN) search/insert/delete
-- [AVL Tree](7%20-%20Tree/AVL%20Tree.md): Self-balancing BST
-- [B-Tree](7%20-%20Tree/B-Tree.md): Multi-key, multi-child, height-balanced, used for disk storage
-- [B+ Tree](7%20-%20Tree/B+Tree.md): All values at leaf level, supports multilevel indexing
-- [Red-Black Tree](7%20-%20Tree/Red%20Block%20Tree.md): Self-balancing BST
 - [Trie (Prefix Tree)](7%20-%20Tree/Trie.md): Efficient insert/search/startsWith for strings
+- [Heap](7%20-%20Tree/Heap%20Tree.md)
 - [Union-Find or Disjoint Set Union](7%20-%20Tree/Union-Find.md)
 - [Segment Tree](7%20-%20Tree/Segment%20Tree.md)
-- [Fenwick Tree (Binary Indexed Tree)](7%20-%20Tree/Fenwick%20Tree.md)
-- [Heap](7%20-%20Tree/Heap%20Tree.md),
-- [Suffix Tree/Array](7%20-%20Tree/Suffix%20Tree.md)
+- [Fenwick Tree (Binary Indexed Tree)](7%20-%20Tree/Fenwick%20Tree.md)(rare, but may appear for advanced range query problems)
+- [Suffix Tree/Array](7%20-%20Tree/Suffix%20Tree.md)(rare, but may appear in advanced string matching or bioinformatics roles)
+- [AVL Tree](7%20-%20Tree/AVL%20Tree.md): Self-balancing BST (rarely asked directly; balancing concepts may be discussed)
+- [Red-Black Tree](7%20-%20Tree/Red%20Block%20Tree.md): Self-balancing BST(rarely asked directly; may be mentioned in system design or as underlying data structure in libraries)
+- [B-Tree](7%20-%20Tree/B-Tree.md): Multi-key, multi-child, height-balanced, used for disk storage(almost never asked except for database or storage system roles)
+- [B+ Tree](7%20-%20Tree/B+Tree.md): All values at leaf level, supports multilevel indexing
 
 # <h1 align=center>Graph</h1>
 
