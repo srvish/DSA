@@ -42,7 +42,7 @@ public void PostorderRecursive(TreeNode root)
 
 ---
 
-## Iterative Postorder Traversal (C#) - One way
+## Iterative Postorder Traversal (C#) - dobule stack
 
 ```csharp
 public void PostorderIterative(TreeNode root)
@@ -72,32 +72,37 @@ public void PostorderIterative(TreeNode root)
 }
 ```
 
-## Iterative Postorder Traversal (C#) - Another way
+## Iterative Postorder Traversal (C#) — Single Stack
 
 ```csharp
-public void PostorderIterative(TreeNode root)
+public void PostorderIterativeSingleStack(TreeNode root)
 {
     if (root == null)
         return;
 
-    Stack<TreeNode> stack1 = new Stack<TreeNode>();
-    Stack<TreeNode> stack2 = new Stack<TreeNode>();
-    stack1.Push(root);
+    Stack<TreeNode> stack = new Stack<TreeNode>();
+    TreeNode current = root, lastVisited = null;
 
-    while (stack1.Count > 0)
+    while (stack.Count > 0 || current != null)
     {
-        TreeNode node = stack1.Pop();
-        stack2.Push(node);
-
-        if (node.left != null)
-            stack1.Push(node.left);
-        if (node.right != null)
-            stack1.Push(node.right);
-    }
-
-    while (stack2.Count > 0)
-    {
-        Console.Write(stack2.Pop().val + " ");
+        if (current != null)
+        {
+            stack.Push(current);
+            current = current.left;
+        }
+        else
+        {
+            TreeNode peekNode = stack.Peek();
+            if (peekNode.right != null && lastVisited != peekNode.right)
+            {
+                current = peekNode.right;
+            }
+            else
+            {
+                Console.Write(peekNode.val + " ");
+                lastVisited = stack.Pop();
+            }
+        }
     }
 }
 ```
