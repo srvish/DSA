@@ -1,0 +1,115 @@
+You are given an array of k linked lists lists, where each list is sorted in ascending order.
+Return the sorted linked list that is the result of merging all of the individual linked lists.
+
+Example 1:
+Input: lists = [[1,2,4],[1,3,5],[3,6]]
+Output: [1,1,2,3,3,4,5,6]
+
+Example 2:
+Input: lists = []
+Output: []
+
+Example 3:
+Input: lists = [[]]
+Output: []
+
+Constraints:
+    0 <= lists.length <= 1000
+    0 <= lists[i].length <= 100
+    -1000 <= lists[i][j] <= 1000
+
+Solution:
+-- Recursive
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int val=0, ListNode next=null) {
+ *         this.val = val;
+ *         this.next = next;
+ *     }
+ * }
+ */
+
+public class Solution {    
+    public ListNode MergeKLists(ListNode[] lists) {
+        if (lists.Length == 0) return null;
+        if (lists.Length == 1) return lists[0];
+
+        return Recursive(0, lists.Length - 1, lists);
+    }
+
+    public ListNode Recursive(int a, int b, ListNode[] lists) {
+        if (a == b) return lists[a];
+
+        var mid = a + (b - a) / 2;
+        var list1 = Recursive(a, mid, lists);
+        var list2 = Recursive(mid + 1, b, lists);
+        return MergeTwoLists(list1, list2);
+    }
+
+    public ListNode MergeTwoLists(ListNode list1, ListNode list2) {
+        if (list1 == null) return list2;
+        if (list2 == null) return list1;
+
+        if (list1.val < list2.val) {
+            list1.next = MergeTwoLists(list1.next, list2);
+            return list1;
+        } else {
+            list2.next = MergeTwoLists(list1, list2.next);
+            return list2;
+        }
+    }
+}
+
+
+-- iterative
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int val=0, ListNode next=null) {
+ *         this.val = val;
+ *         this.next = next;
+ *     }
+ * }
+ */
+
+public class Solution {    
+    public ListNode MergeKLists(ListNode[] lists) {
+        ListNode res = new ListNode();
+        ListNode temp = res;
+        int nullCount = 0;
+
+        while (nullCount < lists.Length)
+        {
+            nullCount = 0;                
+            int minI = 0;
+            int min = int.MaxValue;
+            for (int i = 0; i < lists.Length; i++)
+            {
+                if (lists[i] == null)
+                {
+                    nullCount++;
+                    continue;
+                }
+
+                if (min >= lists[i].val)
+                {
+                    minI = i;
+                    min = lists[i].val;
+                }
+            }
+
+            if (nullCount < lists.Length) {
+                temp.next = lists[minI];
+                lists[minI] = lists[minI].next;
+                temp = temp.next;
+            }
+        }
+
+        return res.next;
+    }
+}

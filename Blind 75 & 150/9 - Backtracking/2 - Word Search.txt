@@ -1,0 +1,71 @@
+Given a 2-D grid of characters board and a string word, return true if the word is present in the grid, otherwise return false.
+For the word to be present it must be possible to form it with a path in the board with horizontally or vertically neighboring cells. The same cell may not be used more than once in a word.
+
+Example 1:
+Input: 
+board = [
+  ["A","B","C","D"],
+  ["S","A","A","T"],
+  ["A","C","A","E"]
+],
+word = "CAT"
+
+Output: true
+
+Example 2:
+Input: 
+board = [
+  ["A","B","C","D"],
+  ["S","A","A","T"],
+  ["A","C","A","E"]
+],
+word = "BAT"
+
+Output: false
+
+Constraints:
+
+    1 <= board.length, board[i].length <= 5
+    1 <= word.length <= 10
+    board and word consists of only lowercase and uppercase English letters.
+
+Solution:
+public class Solution {
+    public bool Exist(char[][] board, string word)
+    {
+        for(int i = 0; i < board.Length; i++)
+        {
+            for(int j = 0; j < board[i].Length; j++)
+            {
+                if(Travel(board, word, i, j, 0))
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public bool Travel(char[][] board, string word, int i, int j, int charI)
+    {
+        if (charI == word.Length)
+        {
+            return true;
+        }
+
+        if (i < 0 || j < 0 || i >= board.Length || j >= board[i].Length || board[i][j] == '#' || board[i][j] != word[charI])
+        {
+            return false;
+        }
+
+        board[i][j] = '#';
+        bool d = Travel(board, word, i + 1, j, charI + 1);
+        bool l = Travel(board, word, i - 1, j, charI + 1);
+        bool r = Travel(board, word, i, j + 1, charI + 1);
+        bool t = Travel(board, word, i, j - 1, charI + 1);
+        board[i][j] = word[charI];
+
+        return l || t || r || d;
+    }
+}

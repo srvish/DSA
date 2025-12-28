@@ -1,0 +1,63 @@
+Given two integers a and b, return the sum of the two integers without using the + and - operators.
+
+Example 1:
+
+Input: a = 1, b = 1
+
+Output: 2
+
+Example 2:
+
+Input: a = 4, b = 7
+
+Output: 11
+
+Constraints:
+
+    -1000 <= a, b <= 1000
+
+Solution:
+public class Solution {
+    public int GetSum(int a, int b) {
+        return SolvingItAnotherWay(a, b);
+    }
+
+    public int SolvingItMySelf(int a, int b)
+    {
+        int sum = 0;
+        int carry = 0;
+        int count = 0;
+        int mask = -1;
+
+        while (count < 32)
+        {
+            int aBit = (a >> count) & 1;
+            int bBit = (b >> count) & 1;
+            int fBit = aBit ^ bBit ^ carry;
+
+            carry = (aBit == 1 && bBit == 1) || (bBit == 1 && carry == 1) || (carry == 1 && aBit == 1) ? 1 : 0;
+            if (fBit > 0)
+                sum |= fBit << count;
+            count++;
+        }
+
+        if (sum > int.MaxValue)
+        {
+            sum = ~(sum ^ mask);
+        }
+
+        return sum;
+    }
+
+    public int SolvingItAnotherWay(int a, int b)
+    {
+        while(b != 0)
+        {
+            int temp = (a & b) << 1;
+            a = a ^ b;
+            b = temp;
+        }
+
+        return a;
+    }
+}

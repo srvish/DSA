@@ -1,0 +1,57 @@
+Given a string s, return the longest substring of s that is a palindrome.
+
+A palindrome is a string that reads the same forward and backward.
+
+If there are multiple palindromic substrings that have the same length, return any one of them.
+
+Example 1:
+
+Input: s = "ababd"
+
+Output: "bab"
+
+Explanation: Both "aba" and "bab" are valid answers.
+
+Example 2:
+
+Input: s = "abbc"
+
+Output: "bb"
+
+Constraints:
+
+    1 <= s.length <= 1000
+    s contains only digits and English letters.
+
+Solution:
+public class Solution {
+    public string LongestPalindrome(string s) {
+        int l = 0;
+        int r = 0;
+        int len = 0;
+        int startI = 0;
+        int i = 0;
+        while(i < s.Length)
+        {
+            l = i - 1;
+            r = i + 1;
+            while(l >= 0 && s[i] == s[l]) l--;
+            while(r < s.Length && s[i] == s[r]) r++;
+
+            i = r;
+            while(l >= 0 && r < s.Length && s[l] == s[r])
+            {
+                l--;
+                r++;
+            }
+            int length = r - l - 1;
+            if(length > len)
+            {
+                startI = l + 1;
+                len = length;
+            }
+        }
+
+        return s.Substring(startI, len);
+    }
+}

@@ -1,0 +1,80 @@
+Design a data structure that supports adding new words and searching for existing words.
+
+Implement the WordDictionary class:
+
+    void addWord(word) Adds word to the data structure.
+    bool search(word) Returns true if there is any string in the data structure that matches word or false otherwise. word may contain dots '.' where dots can be matched with any letter.
+
+Example 1:
+
+Input:
+["WordDictionary", "addWord", "day", "addWord", "bay", "addWord", "may", "search", "say", "search", "day", "search", ".ay", "search", "b.."]
+
+Output:
+[null, null, null, null, false, true, true, true]
+
+Explanation:
+WordDictionary wordDictionary = new WordDictionary();
+wordDictionary.addWord("day");
+wordDictionary.addWord("bay");
+wordDictionary.addWord("may");
+wordDictionary.search("say"); // return false
+wordDictionary.search("day"); // return true
+wordDictionary.search(".ay"); // return true
+wordDictionary.search("b.."); // return true
+
+Constraints:
+
+    1 <= word.length <= 20
+    word in addWord consists of lowercase English letters.
+    word in search consist of '.' or lowercase English letters.
+    There will be at most 2 dots in word for search queries.
+    At most 10,000 calls will be made to addWord and search.
+
+Solution:
+public class WordDictionary {
+    public class Trie {
+        public Dictionary<char, Trie> map = new Dictionary<char, Trie>();
+        public bool isEnd;
+    }
+
+    Trie root;
+    public WordDictionary() {
+        root = new Trie();
+    }
+    
+    public void AddWord(string word) {
+        var temp = root;
+        foreach(var ch in word) {
+            if (!temp.map.TryGetValue(ch, out Trie node)) {
+                node = new Trie();
+                temp.map[ch] = node;
+            }
+            temp = node;
+        }
+        temp.isEnd = true;
+    }
+    
+    public bool Search(string word) {
+        return Search(word, 0, root);
+    }
+
+    bool Search(string word, int i, Trie node) {
+        var temp = node;
+        for(int j = i; j < word.Length; j++) {
+            if (word[j] == '.') {
+                foreach(var m in temp.map) {
+                    if (Search(word, j + 1, m.Value)) {
+                        return true;
+                    }
+                }
+                return false;
+            } else if (temp.map.TryGetValue(word[j], out var n)) {
+                    temp = n;
+            } else {
+              return false;  
+            }
+        }
+        return temp.isEnd;
+    }
+}

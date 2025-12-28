@@ -1,0 +1,40 @@
+Given the beginning of a singly linked list head, reverse the list, and return the new beginning of the list.
+
+Example 1:
+Input: head = [0,1,2,3]
+Output: [3,2,1,0]
+
+Example 2:
+Input: head = []
+Output: []
+
+Constraints:
+    0 <= The length of the list <= 1000.
+    -1000 <= Node.val <= 1000
+
+Solution:
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int val=0, ListNode next=null) {
+ *         this.val = val;
+ *         this.next = next;
+ *     }
+ * }
+ */
+ 
+public class Solution {
+    public ListNode ReverseList(ListNode head) {
+        ListNode prev = null;
+        while(head != null) {
+            ListNode temp = head.next;
+            head.next = prev;
+            prev = head;
+            head = temp;
+        }
+
+        return prev;
+    }
+}

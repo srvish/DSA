@@ -1,0 +1,65 @@
+The median is the middle value in a sorted list of integers. For lists of even length, there is no middle value, so the median is the mean of the two middle values.
+For example:
+    For arr = [1,2,3], the median is 2.
+    For arr = [1,2], the median is (1 + 2) / 2 = 1.5
+
+Implement the MedianFinder class:
+    MedianFinder() initializes the MedianFinder object.
+    void addNum(int num) adds the integer num from the data stream to the data structure.
+    double findMedian() returns the median of all elements so far.
+
+Example 1:
+Input:
+["MedianFinder", "addNum", "1", "findMedian", "addNum", "3" "findMedian", "addNum", "2", "findMedian"]
+Output:
+[null, null, 1.0, null, 2.0, null, 2.0]
+Explanation:
+MedianFinder medianFinder = new MedianFinder();
+medianFinder.addNum(1);    // arr = [1]
+medianFinder.findMedian(); // return 1.0
+medianFinder.addNum(3);    // arr = [1, 3]
+medianFinder.findMedian(); // return 2.0
+medianFinder.addNum(2);    // arr[1, 2, 3]
+medianFinder.findMedian(); // return 2.0
+
+Constraints:
+
+    -100,000 <= num <= 100,000
+    findMedian will only be called after adding at least one integer to the data structure.
+
+Solution:
+public class MedianFinder {
+    PriorityQueue<int,int> maxHeap;
+    PriorityQueue<int,int> minHeap;
+
+    public MedianFinder() {
+        maxHeap = new PriorityQueue<int, int>(Comparer<int>.Create((a, b) => b.CompareTo(a)));
+        minHeap = new PriorityQueue<int, int>();
+    }
+    
+    public void AddNum(int num) {
+        if (minHeap.Count != 0 && num > minHeap.Peek()) {
+            minHeap.Enqueue(num, num);
+        } else {
+            maxHeap.Enqueue(num, num);
+        }
+
+        if (minHeap.Count > maxHeap.Count + 1) {
+            int val = minHeap.Dequeue();
+            maxHeap.Enqueue(val, val);
+        } else if (maxHeap.Count > minHeap.Count + 1) {
+            int val = maxHeap.Dequeue();
+            minHeap.Enqueue(val, val);
+        }
+    }
+    
+    public double FindMedian() {
+        if (minHeap.Count > maxHeap.Count) {
+            return minHeap.Peek();
+        } else if (maxHeap.Count > minHeap.Count) {
+            return maxHeap.Peek();
+        }
+
+        return (minHeap.Peek() + maxHeap.Peek()) / 2.0;
+    }
+}
