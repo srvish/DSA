@@ -2,6 +2,8 @@
 
 ## Algorithm Steps
 
+- video link https://youtu.be/cIBFEhD77b4
+- problem: https://leetcode.com/problems/course-schedule/description/?envType=problem-list-v2&envId=xr3pqjki
 - Represent the graph using an adjacency list.
 - Maintain a boolean array to mark visited nodes.
 - Use a stack to store the topological order.
