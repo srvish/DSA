@@ -21,7 +21,7 @@ The Union-Find algorithm, also known as Disjoint Set Union (DSU), is a data stru
 
 ---
 
-## C# Example
+## C# Example (Union by Rank)
 
 ```csharp
 public class UnionFind
@@ -33,15 +33,17 @@ public class UnionFind
     {
         parent = new int[size];
         rank = new int[size];
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < size; i++) {
             parent[i] = i;
+        }
     }
 
     // Find with path compression
     public int Find(int x)
     {
-        if (parent[x] != x)
+        if (parent[x] != x) {
             parent[x] = Find(parent[x]);
+        }
         return parent[x];
     }
 
@@ -50,16 +52,72 @@ public class UnionFind
     {
         int rootX = Find(x);
         int rootY = Find(y);
+        if (rootX == rootY) {
+            return;
+        }
+
+        if (rank[rootX] < rank[rootY]) {
+            parent[rootX] = rootY;
+        }
+        else if (rank[rootX] > rank[rootY]) {
+            parent[rootY] = rootX;
+        }
+        else {
+            parent[rootY] = rootX;
+            rank[rootX]++;
+        }
+    }
+}
+```
+
+---
+
+## C# Example (Union by Size)
+
+```csharp
+public class UnionFindBySize
+{
+    private int[] parent;
+    private int[] size;
+
+    public UnionFindBySize(int count)
+    {
+        parent = new int[count];
+        size = new int[count];
+        for (int i = 0; i < count; i++)
+        {
+            parent[i] = i;
+            size[i] = 1; // Each component is initially of size 1
+        }
+    }
+
+    // Find with path compression (remains the same)
+    public int Find(int x)
+    {
+        if (parent[x] != x) {
+            parent[x] = Find(parent[x]);
+        }
+
+        return parent[x];
+    }
+
+    // Union by size
+    public void Union(int x, int y)
+    {
+        int rootX = Find(x);
+        int rootY = Find(y);
         if (rootX == rootY) return;
 
-        if (rank[rootX] < rank[rootY])
+        // Attach smaller tree to the root of the larger tree
+        if (size[rootX] < size[rootY])
+        {
             parent[rootX] = rootY;
-        else if (rank[rootX] > rank[rootY])
-            parent[rootY] = rootX;
+            size[rootY] += size[rootX];
+        }
         else
         {
             parent[rootY] = rootX;
-            rank[rootX]++;
+            size[rootX] += size[rootY];
         }
     }
 }

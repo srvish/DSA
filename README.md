@@ -83,7 +83,7 @@
 - Binary Tree (Full, Perfect, Complete, Degenerate, Skewed, Balanced)
 - [Binary Search Tree (BST)](7%20-%20Tree/Binary%20Search%20Tree.md): O(logN) search/insert/delete
 - [Trie (Prefix Tree)](7%20-%20Tree/Trie.md): Efficient insert/search/startsWith for strings
-- [Heap](7%20-%20Tree/Heap%20Tree.md)
+- [Heap](7%20-%20Tree/Heap%20Tree.md): min heap and max heap
 - [Union-Find or Disjoint Set Union](7%20-%20Tree/Union-Find.md)
 - [Segment Tree](7%20-%20Tree/Segment%20Tree.md)
 - [Fenwick Tree (Binary Indexed Tree)](7%20-%20Tree/Fenwick%20Tree.md)(rare, but may appear for advanced range query problems)

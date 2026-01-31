@@ -19,6 +19,9 @@ A Fenwick Tree, also known as a Binary Indexed Tree (BIT), is a data structure t
 
 - To get the prefix sum up to a given index, sum the values at the index and all relevant ancestors by moving to the parent using `index -= index & -index`.
 
+**Visualization**
+![Tree Traversals](images/Fenwick%20Tree.png)
+
 ---
 
 ## C# Implementation
@@ -29,10 +32,22 @@ public class FenwickTree
     private int[] tree;
     private int n;
 
-    public FenwickTree(int size)
+    public FenwickTree(int[] nums)
     {
-        n = size;
+        n = nums.Length;
         tree = new int[n + 1];
+        // Initialize tree with input array values
+        Array.Copy(nums, 0, tree, 1, n);
+
+        // Build the Fenwick tree in O(N)
+        for (int i = 1; i <= n; i++)
+        {
+            int parent = i + (i & -i);
+            if (parent <= n)
+            {
+                tree[parent] += tree[i];
+            }
+        }
     }
 
     // Add value to index (1-based)
@@ -69,7 +84,7 @@ public class FenwickTree
 
 **Time Complexity:**
 
-- Build: O(N) (if built with repeated updates)
+- Build: O(N)
 - Update: O(log N)
 - Query: O(log N)
 
