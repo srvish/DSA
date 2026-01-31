@@ -42,7 +42,7 @@ public void PostorderRecursive(TreeNode root)
 
 ---
 
-## Iterative Postorder Traversal (C#) - dobule stack
+## Iterative Postorder Traversal (C#) - double stack
 
 ```csharp
 public void PostorderIterative(TreeNode root)
@@ -81,7 +81,8 @@ public void PostorderIterativeSingleStack(TreeNode root)
         return;
 
     Stack<TreeNode> stack = new Stack<TreeNode>();
-    TreeNode current = root, lastVisited = null;
+    TreeNode current = root; // Indicate what will be added in the stack
+    TreeNode lastVisited = null; // Marks what is already printed specially coming back from the right side
 
     while (stack.Count > 0 || current != null)
     {
@@ -93,7 +94,7 @@ public void PostorderIterativeSingleStack(TreeNode root)
         else
         {
             TreeNode peekNode = stack.Peek();
-            if (peekNode.right != null && lastVisited != peekNode.right)
+            if (peekNode.right != null && lastVisited != peekNode.right) // check in case I already printed/visited right then I should not mark it as current again.
             {
                 current = peekNode.right;
             }

@@ -46,7 +46,10 @@ public class MaxHeap
 
     public int ExtractMax()
     {
-        if (heap.Count == 0) throw new InvalidOperationException("Heap is empty");
+        if (heap.Count == 0) {
+            throw new InvalidOperationException("Heap is empty");
+        }
+
         int max = heap[0];
         heap[0] = heap[heap.Count - 1];
         heap.RemoveAt(heap.Count - 1);
@@ -56,9 +59,18 @@ public class MaxHeap
 
     private void HeapifyDown(int i)
     {
-        int left = 2 * i + 1, right = 2 * i + 2, largest = i;
-        if (left < heap.Count && heap[left] > heap[largest]) largest = left;
-        if (right < heap.Count && heap[right] > heap[largest]) largest = right;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        int largest = i;
+
+        if (left < heap.Count && heap[left] > heap[largest]) {
+            largest = left;
+        }
+
+        if (right < heap.Count && heap[right] > heap[largest]) {
+            largest = right;
+        }
+
         if (largest != i)
         {
             (heap[i], heap[largest]) = (heap[largest], heap[i]);
@@ -88,7 +100,10 @@ public class MinHeap
 
     public int ExtractMin()
     {
-        if (heap.Count == 0) throw new InvalidOperationException("Heap is empty");
+        if (heap.Count == 0) {
+            throw new InvalidOperationException("Heap is empty");
+        }
+
         int min = heap[0];
         heap[0] = heap[heap.Count - 1];
         heap.RemoveAt(heap.Count - 1);
@@ -98,9 +113,18 @@ public class MinHeap
 
     private void HeapifyDown(int i)
     {
-        int left = 2 * i + 1, right = 2 * i + 2, smallest = i;
-        if (left < heap.Count && heap[left] < heap[smallest]) smallest = left;
-        if (right < heap.Count && heap[right] < heap[smallest]) smallest = right;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        int smallest = i;
+
+        if (left < heap.Count && heap[left] < heap[smallest]) {
+            smallest = left;
+        }
+
+        if (right < heap.Count && heap[right] < heap[smallest]) {
+            smallest = right;
+        }
+
         if (smallest != i)
         {
             (heap[i], heap[smallest]) = (heap[smallest], heap[i]);

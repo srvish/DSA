@@ -40,7 +40,7 @@
 
 # <h1 align=center>Queue</h1>
 
-[**Queue**](2%20-%20Queue/Implementation.md) & [**Circular Queue**](2%20-%20Queue/Circular%20Queue.md) (FIFO)
+[**Queue**](2%20-%20Queue/Implementation.md) (FIFO)
 
 - Operations: Enqueue, Dequeue, IsEmpty, IsFull, Peek
 - Types: Circular Queue, Deque, Priority Queue
@@ -76,6 +76,7 @@
 **Tree Traversal**
 
 - [In-order](7%20-%20Tree/Inorder%20Traversal.md), [Pre-order](7%20-%20Tree/Preorder%20Traversal.md), [Post-order](7%20-%20Tree/Postorder%20Traversal.md), [Level-order](7%20-%20Tree/Levelorder%20Traversal.md) (recursive and non-recursive)
+  ![Tree Traversals](7%20-%20Tree/images/Tree%20Traversal.png)
 
 **Types of Trees**
 

@@ -33,19 +33,17 @@ public class Stack
 {
     private int[] arr;
     private int top;
-    private int capacity;
 
     public Stack(int size)
     {
         arr = new int[size];
-        capacity = size;
         top = -1;
     }
 
     // Push element onto stack
     public void Push(int x)
     {
-        if (top == capacity - 1)
+        if (top == arr.Length - 1)
             throw new InvalidOperationException("Stack Overflow");
         arr[++top] = x;
     }
